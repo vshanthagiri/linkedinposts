@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Builder Mindset Poster</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="posterCanvas"></canvas>
+
+  <script>
+    const imageUrl = 'https://v3b.fal.media/files/b/monkey/U7oRyAIZXcPAzpzehnfBG_5f8357d50660425fbfbc5ede8e51c8bb.jpg';
+    const canvas = document.getElementById('posterCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      draw();
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.src = imageUrl;
+    img.onload = () => {
+      resizeCanvas();
+    };
+
+    function draw() {
+      if (!img.complete) return;
+
+      const ratio = Math.max(canvas.width / img.width, canvas.height / img.height);
+      const newWidth = img.width * ratio;
+      const newHeight = img.height * ratio;
+      const offsetX = (canvas.width - newWidth) / 2;
+      const offsetY = (canvas.height - newHeight) / 2;
+      ctx.drawImage(img, offsetX, offsetY, newWidth, newHeight);
+
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const text = 'Build your future. Embrace the Builder Mindset';
+      const boxWidth = canvas.width * 0.3;
+      const boxHeight = canvas.height;
+      const boxX = canvas.width * 0.05;
+      const boxY = 0;
+
+      // Draw solid black rectangle
+      ctx.fillStyle = 'black';
+      ctx.fillRect(boxX, boxY, boxWidth, boxHeight);
+
+      // Start with increased max font size
+      let fontSize = 60;
+      const maxFontSize = 60; // cap at this increased size
+      const maxTextWidth = boxWidth * 0.8;
+      const maxTextHeight = boxHeight * 0.8;
+
+      let lines, lineHeight;
+      function wrapTextAndMeasure(fs) {
+        ctx.font = `bold ${fs}px sans-serif`;
+        const words = text.split(' ');
+        let line = '';
+        lines = [];
+        for (let i = 0; i < words.length; i++) {
+          const testLine = line + words[i] + ' ';
+          if (ctx.measureText(testLine).width > maxTextWidth && i > 0) {
+            lines.push(line.trim());
+            line = words[i] + ' ';
+          } else {
+            line = testLine;
+          }
+        }
+        lines.push(line.trim());
+        lineHeight = fs * 1.4;
+        return lines.length * lineHeight;
+      }
+
+      // Reduce font size until text fits
+      while (wrapTextAndMeasure(fontSize) > maxTextHeight && fontSize > 10) {
+        fontSize--;
+      }
+
+      // Ensure we never exceed the max font size
+      fontSize = Math.min(fontSize, maxFontSize);
+
+      const startX = boxX + (boxWidth - maxTextWidth) / 2;
+      let startY = (canvas.height - (lines.length * lineHeight)) / 2;
+
+      ctx.fillStyle = 'white';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'top';
+      ctx.font = `bold ${fontSize}px sans-serif`;
+
+      lines.forEach(line => {
+        ctx.fillText(line, startX, startY);
+        startY += lineHeight;
+      });
+    }
+  </script>
+</body>
+</html>
