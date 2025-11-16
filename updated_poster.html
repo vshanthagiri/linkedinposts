@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Poster</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+        .caption-container {
+            width: 30%;
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1em;
+            box-sizing: border-box;
+        }
+        .caption {
+            font-size: 5vw;
+            line-height: 1.2;
+            max-height: 80vh;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            /* This font size will be maximized to fit 80% height of container */
+            /* We can use viewport width based sizing for simplicity */
+        }
+        .image-container {
+            width: 70%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+    <div class="caption-container">
+        <div class="caption">Embrace Curiosity and Wonder</div>
+    </div>
+    <div class="image-container" style="background-image: url('https://v3b.fal.media/files/b/monkey/U7oRyAIZXcPAzpzehnfBG_5f8357d50660425fbfbc5ede8e51c8bb.jpg');">
+    </div>
+</body>
+</html>
