@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Poster</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: white;
+  }
+  #container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+  }
+  #leftPanel {
+    background: black;
+    color: white;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    box-sizing: border-box;
+  }
+  #caption {
+    font-size: 3vw;
+    font-weight: bold;
+    max-width: 80%;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+  }
+  #rightPanel {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  #rightPanel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+</head>
+<body>
+<div id="container">
+  <div id="leftPanel">
+    <div id="caption">Future: Human to the power of AI</div>
+  </div>
+  <div id="rightPanel">
+    <img src=" https://v3b.fal.media/files/b/rabbit/B4gesUifuVs0QyQ-6Ha1R_8315313ad2cf47cb86467258ae3c5633.jpg" alt="Poster Image" />
+  </div>
+</div>
+<script>
+const imageUrl = ' https://v3b.fal.media/files/b/rabbit/B4gesUifuVs0QyQ-6Ha1R_8315313ad2cf47cb86467258ae3c5633.jpg';
+const text = 'Future: Human to the power of AI';
+
+// The rest of the JavaScript code that handles canvas drawing and text scaling goes here, unchanged.
+</script>
+</body>
+</html>
