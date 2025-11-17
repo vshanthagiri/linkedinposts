@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Friday Sale - Larana, Inc.</title>
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+        }
+
+        .container {
+            width: 900px;
+            height: 600px;
+            display: flex;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            border-radius: 12px;
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        /* Left Section with Gradient Background and Model Image */
+        .left {
+            flex: 1;
+            background: linear-gradient(135deg, #fcca3f 0%, #ff6d00 100%);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .model-img {
+            width: 380px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Right Section */
+        .right {
+            flex: 1;
+            background: #f7f3f1; /* soft off-white */
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            color: #42291a; /* chocolate brown */
+        }
+
+        /* Header at top right */
+        .header {
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0;
+            margin-bottom: 30px;
+            color: #42291a;
+        }
+
+        /* Promo Section */
+        .promo-main {
+            margin-bottom: 30px;
+        }
+
+        .promo-main .special-offer {
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 4px;
+            font-weight: 600;
+            color: #42291a;
+            margin-bottom: 8px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        .promo-main .black-friday {
+            font-weight: 700;
+            font-size: 38px;
+            font-family: 'Arial Rounded MT Bold', 'Arial Rounded', Arial, sans-serif;
+            color: #42291a;
+            letter-spacing: 1px;
+        }
+
+        /* Subtext Section */
+        .subtext {
+            margin-bottom: 30px;
+        }
+
+        .subtext .discount {
+            text-transform: uppercase;
+            color: #cfa053; /* mustard gold */
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        .subtext .description {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            max-width: 320px;
+            color: #42291a;
+        }
+
+        /* Call to Action Button */
+        .cta-button {
+            background-color: #42291a;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: max-content;
+            align-self: start;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .cta-button:hover {
+            background-color: #5a3b25;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left">
+        <!-- Assume model image is accessible locally or from a URL. Use placeholder for now -->
+        <img src="https://images.unsplash.com/photo-1503342452485-86f0d4d5dc18?auto=format&fit=crop&w=400&q=80" alt="Woman in pink coat holding handbags" class="model-img">
+    </div>
+    <div class="right">
+        <div class="header">Larana, Inc.</div>
+        <div class="promo-main">
+            <div class="special-offer">SPECIAL OFFER</div>
+            <div class="black-friday">BLACK FRIDAY SALE</div>
+        </div>
+        <div class="subtext">
+            <div class="discount">UP TO 50% OFF</div>
+            <div class="description">Unbeatable deals await this Black Friday with massive savings on everything you need and want to buy</div>
+        </div>
+        <button class="cta-button">SHOP NOW</button>
+    </div>
+</div>
+
+</body>
+</html>
