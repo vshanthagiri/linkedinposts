@@ -24,8 +24,8 @@
     const ctx = canvas.getContext('2d');
 
     function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = 1080;
+      canvas.height = 1080;
       draw();
     }
 
@@ -52,7 +52,7 @@
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       const text = 'Build your future. Embrace the Builder Mindset';
-      const boxWidth = canvas.width * 0.3;
+      const boxWidth = canvas.width * 0.5;
       const boxHeight = canvas.height;
       const boxX = canvas.width * 0.05;
       const boxY = 0;
@@ -61,9 +61,9 @@
       ctx.fillStyle = 'black';
       ctx.fillRect(boxX, boxY, boxWidth, boxHeight);
 
-      // Start with increased max font size
-      let fontSize = 60;
-      const maxFontSize = 60; // cap at this increased size
+      // Start with adjusted max font size
+      let fontSize = 76.5; // 90 reduced by 15%
+      const maxFontSize = 76.5;
       const maxTextWidth = boxWidth * 0.8;
       const maxTextHeight = boxHeight * 0.8;
 
