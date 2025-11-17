@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedIn Poster</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+    .side-text {
+      background-color: black;
+      color: white;
+      width: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2em;
+      box-sizing: border-box;
+      text-align: center;
+      font-weight: bold;
+      font-size: 2vw;
+      line-height: 1.2;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    canvas {
+      width: 70%;
+      height: 100%;
+      display: block;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="side-text" id="caption"></div>
+    <canvas id="canvas"></canvas>
+  </div>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+
+    function resize() {
+      width = canvas.clientWidth;
+      height = canvas.clientHeight;
+      canvas.width = width * devicePixelRatio;
+      canvas.height = height * devicePixelRatio;
+      ctx.scale(devicePixelRatio, devicePixelRatio);
+      draw();
+    }
+
+    const imageUrl = 'https://v3b.fal.media/files/b/tiger/kL2vECfW8rsyEeE7FnZF1_55af17f28fd1478abbba33d7e9c99da3.jpg';
+    const text = 'Empowering the Future: Where Creativity Meets Intelligence';
+
+    function draw() {
+      const img = new Image();
+      img.onload = () => {
+        ctx.clearRect(0, 0, width, height);
+        // Draw image scaled to fill canvas
+        const scale = Math.max(width / img.width, height / img.height);
+        const x = (width - img.width * scale) / 2;
+        const y = (height - img.height * scale) / 2;
+        ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
+      };
+      img.src = imageUrl;
+    }
+
+    window.addEventListener('resize', resize);
+    document.getElementById('caption').textContent = text;
+
+    resize();
+  </script>
+</body>
+</html>
