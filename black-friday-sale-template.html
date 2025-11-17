@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Friday Sale</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .left {
+            flex: 1;
+            background-color: #f6aa1c; /* yellowish background */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .left img {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: cover;
+            border: 6px solid #fff;
+            box-sizing: border-box;
+        }
+        .right {
+            flex: 1;
+            background-color: #3d2b1f; /* dark brown background */
+            color: #fff;
+            padding: 30px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        .company {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #222;
+            background-color: #f8f8f8;
+            padding: 6px 10px;
+            border-radius: 4px;
+            align-self: flex-start;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 48px;
+            line-height: 1;
+            color: #2f241b;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .subtitle {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 30px 0 15px;
+            color: #fdba21;
+        }
+        .description {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.5;
+            color: #eee;
+            margin-bottom: 35px;
+        }
+        .shop-link {
+            font-weight: 700;
+            font-size: 20px;
+            color: #fdba21;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+        .plus-symbol {
+            font-weight: 900;
+            font-size: 48px;
+            color: #2f241b;
+            margin: 10px 0;
+        }
+        .decorative-plus {
+            position: absolute;
+            font-weight: 900;
+            font-size: 32px;
+            color: #2f241b;
+        }
+        .decorative-plus.top {
+            top: 10px;
+            right: 20px;
+        }
+        .decorative-plus.bottom {
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Fashion woman holding bags">
+        </div>
+        <div class="right">
+            <div class="company decorative-plus top">+</div>
+            <div class="company">Larana, Inc.</div>
+            <div class="title">SPECIAL OFFER<br>BLACK<br>FRIDAY<br>SALE</div>
+            <div class="plus-symbol">+</div>
+            <div class="subtitle">UP TO 50% OFF</div>
+            <div class="description">
+                Unbeatable deals await this Black Friday with massive savings on everything you need and want to buy
+            </div>
+            <div class="subtitle">SHOP NOW</div>
+            <a href="http://www.reallygreatsite.com" class="shop-link" target="_blank" rel="noopener noreferrer">www.reallygreatsite.com</a>
+            <div class="decorative-plus bottom">&#10006;<br>&#10006;<br>&#10006;</div>
+        </div>
+    </div>
+</body>
+</html>
