@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Friday Sale</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+  }
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  .left-section {
+    background-color: #f2a900; /* bright orange-yellow */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .left-section img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+  }
+  .right-section {
+    background-color: #fff;
+    flex: 1;
+    position: relative;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    background-image: linear-gradient(rgba(59, 38, 23, 0.85), rgba(59, 38, 23, 0.85)); /* dark brown overlay */
+  }
+  .header {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 0.875rem; /* small font */
+    font-weight: 400;
+  }
+  .offer-section h4 {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+  }
+  .offer-section h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    font-weight: 900;
+  }
+  .offer-details {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <img src="https://example.com/image-woman-pink-jacket-bags.jpg" alt="Woman wearing a pink jacket holding multiple colorful bags (yellow, blue, green, orange)" />
+    </div>
+    <div class="right-section">
+      <span class="header">Larana, Inc.</span>
+      <div class="offer-section">
+        <h4>SPECIAL OFFER</h4>
+        <h1>BLACK FRIDAY SALE</h1>
+      </div>
+      <div class="offer-details">UP TO 50% OFF</div>
+    </div>
+  </div>
+</body>
+</html>
