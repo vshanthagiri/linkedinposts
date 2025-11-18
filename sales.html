@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promotional Split Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      width: {{width}}px;
+      height: {{height}}px;
+      display: flex;
+      position: relative;
+      font-size: calc({{width}}px / 40); /* Base font size scales with width */
+    }
+
+    /* Left side - Image section */
+    .image-section {
+      flex: 1;
+      background: {{background_color}};
+      position: relative;
+      overflow: hidden;
+    }
+
+    .decorative-bars {
+      position: absolute;
+      top: 3%;
+      left: 3%;
+      display: flex;
+      gap: 0.3em;
+      z-index: 1;
+    }
+
+    .bar {
+      width: 0.5em;
+      height: 2.5em;
+      background: white;
+      opacity: 0.9;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Right side - Content section */
+    .content-section {
+      flex: 1;
+      background: {{content_background}};
+      padding: 5% 4%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .top-section {
+      text-align: right;
+    }
+
+    .brand-name {
+      font-size: 1.3em;
+      font-weight: 300;
+      color: #333;
+      margin-bottom: 1.5em;
+      letter-spacing: 0.08em;
+    }
+
+    .offer-label {
+      font-size: 0.75em;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: #333;
+      text-transform: uppercase;
+      margin-bottom: 0.4em;
+      text-align: left;
+    }
+
+    .main-heading {
+      font-size: 3em;
+      font-weight: 900;
+      color: #2d2416;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5em;
+      text-align: left;
+    }
+
+    .bottom-section {
+      background: #3d3628;
+      margin: 0 -4% -5% -4%;
+      padding: 4%;
+      border-top: 0.3em solid white;
+      position: relative;
+    }
+
+    .discount {
+      font-size: 1.15em;
+      font-weight: 700;
+      color: #f4b860;
+      margin-bottom: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .description {
+      font-size: 0.75em;
+      color: white;
+      line-height: 1.6;
+      margin-bottom: 1.4em;
+      font-weight: 300;
+    }
+
+    .cta {
+      font-size: 1.3em;
+      font-weight: 700;
+      color: #f4b860;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.6em;
+    }
+
+    .website {
+      font-size: 0.9em;
+      color: white;
+      font-weight: 300;
+    }
+
+    .corner-plus {
+      position: absolute;
+      font-size: 1.6em;
+      font-weight: 300;
+      color: #333;
+    }
+
+    .plus-top-right {
+      top: 2.5%;
+      right: 2.5%;
+    }
+
+    .plus-with-heading {
+      position: absolute;
+      left: -0.4em;
+      bottom: 2.5em;
+      font-size: 2.6em;
+    }
+
+    .corner-x-container {
+      position: absolute;
+      bottom: 2.5%;
+      right: 2.5%;
+      display: flex;
+      gap: 0.5em;
+    }
+
+    .corner-x-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+
+    .x-mark {
+      font-size: 1.2em;
+      color: white;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Image Section -->
+    <div class="image-section">
+      <div class="decorative-bars">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <img src="{{image_url}}" alt="Product" class="product-image">
+    </div>
+
+    <!-- Right Content Section -->
+    <div class="content-section">
+      <div class="corner-plus plus-top-right">+</div>
+
+      <div class="top-section">
+        <div class="brand-name">{{brand_name}}</div>
+        <div class="offer-label">{{offer_label}}</div>
+        <div class="main-heading">
+          {{main_heading}}
+          <div class="plus-with-heading">+</div>
+        </div>
+      </div>
+
+      <div class="bottom-section">
+        <div class="discount">{{discount_text}}</div>
+        <div class="description">{{description}}</div>
+        <div class="cta">{{cta_text}}</div>
+        <div class="website">{{website}}</div>
+
+        <div class="corner-x-container">
+          <div class="corner-x-row">
+            <div class="x-mark">✕</div>
+            <div class="x-mark">✕</div>
+          </div>
+          <div class="corner-x-row">
+            <div class="x-mark">✕</div>
+            <div class="x-mark">✕</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Signal that rendering is complete
+    if (window.ReactNativeWebView) {
+      window.ReactNativeWebView.postMessage('RENDER_COMPLETE');
+    }
+  </script>
+</body>
+</html>
